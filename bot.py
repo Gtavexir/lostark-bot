@@ -18,6 +18,10 @@ async def on_ready():
 @client.command()
 async def hello(ctx):
     await ctx.send("hello")
+    
+@client.command()
+async def 페온(ctx):
+    await ctx.send("로아샵 골드 시세*17 / 190")
 
 @client.event
 async def on_command_error(ctx, error):
