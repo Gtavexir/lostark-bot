@@ -17,5 +17,12 @@ async def on_ready():
   
   print("봇 이름:",client.user.name,"봇 아이디:",client.user.id,"봇 버전:",discord.__version__)
 
+@client.event
+async def on_message(message):
+    if message.author == client.user: # 봇 자신이 보내는 메세지는 무시
+        return
+    
+    if message.content.startswith('$hello'): # 만약 $hello로 시작하는 채팅이 올라오면
+        await message.channel.send('Hello!') # Hello!라고 보내기
 
 client.run(os.environ['token'])
