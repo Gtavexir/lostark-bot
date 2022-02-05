@@ -6,7 +6,6 @@ client = commands.Bot(command_prefix = '$')
 
 @client.event
 async def on_ready():
-  # [discord.Status.online = 온라인],[discord.Status.idle = 자리비움],[discord.Status.dnd = 다른용무],[discord.Status.offline = 오프라인]
   await client.change_presence(status=discord.Status.online)
 
   await client.change_presence(activity=discord.Game(name="싀무룩 보호"))
