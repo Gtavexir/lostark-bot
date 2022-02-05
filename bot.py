@@ -20,8 +20,17 @@ async def hello(ctx):
     await ctx.send("hello")
     
 @client.command()
-async def 페온(ctx):
-    await ctx.send("로아샵 골드 시세*17 / 190")
+async def 페온(ctx, para):
+    try:
+        cost = int(para)
+    except:
+        embed=discord.Embed(title="페온 계산기", color=0x0091ff)
+        embed.add_field(name="오류", value="잘못된 입력입니다. 다음과 같이 입력해주세요.\n예) $페온 (현재 골드시세)", inline=False)
+        await ctx.send(embed=embed)
+    embed=discord.Embed(title="페온 계산기", description="페온 1개당 골드 가격", color=0x0091ff)
+    embed.add_field(name="페온 1개", value="f{cost} 골드", inline=False)
+    embed.add_field(name="페온 100개", value="f{cost*100} 골드", inline=True)
+    await ctx.send(embed=embed)
 
 @client.command()
 async def 경매(ctx,*para):
