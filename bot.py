@@ -32,8 +32,9 @@ async def 경매(ctx,*para):
         embed.add_field(name="오류", value="잘못된 입력입니다. 다음과 같이 입력해주세요.", inline=False)
         embed.add_field(name="예) $경매 1000", value="", inline=True)
         await ctx.send(embed=embed)
-    cost = cost * 0.95
     embed=discord.Embed(title="경매 입찰 손익분기점(판매)", description="경매 아이템을 팔 경우 손익분기점", color=0x94ffb4)
+    embed.add_field(name="템 가격", value=f"{cost} 골드", inline=False)
+    cost = cost * 0.95
     embed.add_field(name="4인", value=f"{int(cost*3/4)} 골드", inline=False)
     embed.add_field(name="8인", value=f"{int(cost*7/8)} 골드", inline=False)
     embed.add_field(name="16인", value=f"{int(cost*15/16)} 골드", inline=False)
