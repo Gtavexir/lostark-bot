@@ -23,6 +23,10 @@ async def hello(ctx):
 async def 페온(ctx):
     await ctx.send("로아샵 골드 시세*17 / 190")
 
+@client.command()
+async def 경매(ctx, now_cost):
+    await ctx.send(f"입찰적정가 4인: {now_cost * 0.75}, 8인: {now_cost * 0.875}")
+
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
