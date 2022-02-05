@@ -27,9 +27,10 @@ async def 페온(ctx, para):
         embed=discord.Embed(title="페온 계산기", color=0x0091ff)
         embed.add_field(name="오류", value="잘못된 입력입니다. 다음과 같이 입력해주세요.\n예) $페온 (현재 골드시세)", inline=False)
         await ctx.send(embed=embed)
+        return
     embed=discord.Embed(title="페온 계산기", description="페온 1개당 골드 가격", color=0x0091ff)
-    embed.add_field(name="페온 1개", value="f{cost} 골드", inline=False)
-    embed.add_field(name="페온 100개", value="f{cost*100} 골드", inline=True)
+    embed.add_field(name="페온 1개", value=f"{cost} 골드", inline=False)
+    embed.add_field(name="페온 100개", value=f"{cost*100} 골드", inline=False)
     await ctx.send(embed=embed)
 
 @client.command()
@@ -40,6 +41,7 @@ async def 경매(ctx,*para):
         embed=discord.Embed(title="경매 입찰 손익분기점(판매)", color=0x94ffb4)
         embed.add_field(name="오류", value="잘못된 입력입니다. 다음과 같이 입력해주세요.\n예) $경매 1000", inline=False)
         await ctx.send(embed=embed)
+        return
     embed=discord.Embed(title="경매 입찰 손익분기점(판매)", description="경매 아이템을 팔 경우 손익분기점", color=0x94ffb4)
     embed.add_field(name="템 가격", value=f"{cost} 골드", inline=False)
     cost = cost * 0.95
