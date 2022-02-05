@@ -24,8 +24,8 @@ async def 페온(ctx):
     await ctx.send("로아샵 골드 시세*17 / 190")
 
 @client.command()
-async def 경매(ctx, para):
-    await ctx.reply("경매", para)
+async def 경매(ctx, *para):
+    await ctx.send(para)
 
 @client.event
 async def on_command_error(ctx, error):
