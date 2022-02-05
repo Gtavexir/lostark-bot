@@ -29,8 +29,7 @@ async def 경매(ctx,*para):
         cost = int(para[0])
     except:
         embed=discord.Embed(title="경매 입찰 손익분기점(판매)", color=0x94ffb4)
-        embed.add_field(name="오류", value="잘못된 입력입니다. 다음과 같이 입력해주세요.", inline=False)
-        embed.add_field(name="예) $경매 1000", value="", inline=True)
+        embed.add_field(name="오류", value="잘못된 입력입니다. 다음과 같이 입력해주세요.\n예) $경매 1000", inline=False)
         await ctx.send(embed=embed)
     embed=discord.Embed(title="경매 입찰 손익분기점(판매)", description="경매 아이템을 팔 경우 손익분기점", color=0x94ffb4)
     embed.add_field(name="템 가격", value=f"{cost} 골드", inline=False)
