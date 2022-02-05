@@ -25,7 +25,7 @@ async def 페온(ctx):
 
 @client.command()
 async def 경매(ctx, para):
-    await ctx.send("경매", para)
+    await ctx.reply("경매", para)
 
 @client.event
 async def on_command_error(ctx, error):
