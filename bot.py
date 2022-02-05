@@ -24,8 +24,13 @@ async def 페온(ctx):
     await ctx.send("로아샵 골드 시세*17 / 190")
 
 @client.command()
-async def 경매(ctx, *para):
-    await ctx.send(para)
+async def 경매(ctx,*para):
+    try:
+        cost = int(para[0])
+    except:
+        await ctx.send("잘못된 입력입니다.")
+    cost = cost * 0.95
+    await ctx.send(f"4인 기준: {int(cost * 3/4)}\n8인 기준: int(cost * 0.95 * 7/8)\n16인 기준: int(cost * 0.95 * 15/16)")
 
 @client.event
 async def on_command_error(ctx, error):
