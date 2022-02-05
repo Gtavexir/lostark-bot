@@ -25,12 +25,20 @@ async def 페온(ctx):
 
 @client.command()
 async def 경매(ctx,*para):
+    embed = discord.Embed(title='판매시 손익분기점', description='경매 아이템을 팔 경우 이 가격은 넘어가면 손해', color=)
     try:
         cost = int(para[0])
     except:
-        await ctx.send("잘못된 입력입니다.")
+        embed=discord.Embed(title="경매 입찰 손익분기점(판매)", color=0x94ffb4)
+        embed.add_field(name="Error", value="잘못된 입력입니다. 다음과 같이 입력해주세요.", inline=False)
+        embed.set_footer(text="ex.) $경매 1000")
+        await ctx.send(embed=embed)
     cost = cost * 0.95
-    await ctx.send(f"4인 기준: {int(cost * 3/4)}\n8인 기준: int(cost * 0.95 * 7/8)\n16인 기준: int(cost * 0.95 * 15/16)")
+    embed=discord.Embed(title="경매 입찰 손익분기점(판매)", description="경매 아이템을 팔 경우 손익분기점", color=0x94ffb4)
+    embed.add_field(name="4인", value="cost * 3/4", inline=False)
+    embed.add_field(name="8인", value="cost * 3/4", inline=False)
+    embed.add_field(name="16인", value="cost * 3/4", inline=False)
+    await ctx.send(embed=embed)
 
 @client.event
 async def on_command_error(ctx, error):
